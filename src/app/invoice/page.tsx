@@ -85,10 +85,11 @@ FOR SPIKE LUBE CO.`,
   };
 
   // إضافة/تعديل/حذف الأصناف
+  // ✅ الكود الصحيح:
   const handleItemChange = (
     id: string,
     field: keyof InvoiceItem,
-    value: any,
+    value: string | number,
   ) => {
     setItems(
       items.map((item) =>
