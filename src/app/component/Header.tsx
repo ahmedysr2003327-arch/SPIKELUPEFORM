@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <header
-      className="bg-slate-900/95 backdrop-blur-md text-slate-100 border-b border-slate-800 shadow-lg sticky top-0 z-50 w-full font-sans"
+      className="bg-gradient-to-r from-yellow-500 to-amber-600 backdrop-blur-md text-slate-100 border-b border-slate-800 shadow-lg sticky top-0 z-50 w-full font-sans"
       dir="rtl"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -31,24 +31,24 @@ export default function Header() {
           >
             <div className="relative w-10 h-10 rounded-xl bg-slate-800 border border-slate-700/80 flex items-center justify-center overflow-hidden shadow-inner group-hover:border-emerald-500/50 transition-colors">
               <img
-                src={""}
+                src={"/image/1.jpeg"}
                 alt="Logo"
-                className="w-full h-full object-contain p-1"
+                className="w-full h-full object-contain "
                 onError={(e) => {
                   // في حال عدم وجود الصورة يظهر أول حرف كبديل احترافي
                   (e.target as HTMLElement).style.display = "none";
                 }}
               />
-              <span className="text-emerald-400 font-black text-lg select-none">
+              {/* <span className="text-emerald-400 font-black text-lg select-none">
                 S
-              </span>
+              </span> */}
             </div>
 
             <div className="flex flex-col">
-              <span className="text-lg font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">
+              <span className="text-lg font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-slate-950 to-slate-800">
                 SPIKELUBE
               </span>
-              <span className="text-[10px] text-slate-400 font-medium -mt-1 tracking-widest uppercase">
+              <span className="text-[10px] text-gray-50 font-medium -mt-1 tracking-widest uppercase">
                 Invoice System
               </span>
             </div>
@@ -115,10 +115,10 @@ export default function Header() {
             </div>
 
             <Link
-              href="/invoice"
+              href="/form"
               className="px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/60 transition-all duration-200"
             >
-              العملاء
+              نموذج البيانات
             </Link>
           </nav>
         </div>
@@ -127,7 +127,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/invoice"
-            className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-500/20 transition-all duration-200 active:scale-95"
+            className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-amber-50 to-amber-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-500/20 transition-all duration-200 active:scale-95"
           >
             <span className="text-base leading-none transition-transform group-hover:rotate-90 duration-300">
               +

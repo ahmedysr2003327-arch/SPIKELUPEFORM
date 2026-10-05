@@ -1,11 +1,11 @@
-import Header from "./component/Header";
-import InvoicePage from "./invoice/page";
+import CustomerForm from "./form/page";
+// import InvoicePage from "./invoice/page";
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <InvoicePage />
+      {/* <InvoicePage /> */}
+      <CustomerForm />
     </>
   );
 }
