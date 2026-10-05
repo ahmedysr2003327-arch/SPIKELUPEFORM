@@ -3,16 +3,21 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const scriptUrl = process.env.GOOGLE_SCRIPT_URL;
+
+    // 1. قراءة متغير البيئة (يدعم الإثنين في حال التغيير مستقبلاً)
+    const scriptUrl = process.env.GOOGLE_SCRIPT_URL || process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
 
     if (!scriptUrl) {
       return NextResponse.json(
-        { success: false, error: 'لم يتم ضبط GOOGLE_SCRIPT_URL في .env.local' },
+        { 
+          success: false, 
+          error: 'لم يتم العثور على رابط Google Script في متغيرات البيئة (GOOGLE_SCRIPT_URL)' 
+        },
         { status: 500 }
       );
     }
 
-    // تجهيز الحقول بالترتيب المطابق لـ Google Sheets
+    // 2. تجهيز البيانات المطلوبة
     const payload = {
       fullName: body.fullName || '',
       phone: body.phone || '',
@@ -22,6 +27,7 @@ export async function POST(request: Request) {
       address: body.address || '',
     };
 
+    // 3. إرسال الطلب إلى Google Apps Script
     const response = await fetch(scriptUrl, {
       method: 'POST',
       headers: {
@@ -29,28 +35,42 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify(payload),
       redirect: 'follow',
+      cache: 'no-store', // منع Next.js من عمل Cache للطلب
     });
+
+    if (!response.ok) {
+      throw new Error(`فشل الاتصال بـ Google Script (رمز الحالة: ${response.status})`);
+    }
 
     const resText = await response.text();
 
+    // 4. معالجة الرد القادم من Google Apps Script
     let data;
     try {
       data = JSON.parse(resText);
     } catch {
-      data = { result: 'success' };
+      // إذا كان الرد ليس JSON ولكنه أرجع نصاً ناجحاً
+      data = { result: resText.includes('Error') ? 'error' : 'success' };
     }
 
-    if (data.result === 'success') {
-      return NextResponse.json({ success: true, message: 'تم حفظ البيانات بنجاح' });
+    if (data.result === 'success' || data.status === 'success') {
+      return NextResponse.json({ 
+        success: true, 
+        message: 'تم حفظ البيانات بنجاح' 
+      });
     } else {
       return NextResponse.json(
-        { success: false, error: data.error || 'حدث خطأ داخل السكربت' },
-        { status: 500 }
+        { 
+          success: false, 
+          error: data.error || data.message || 'حدث خطأ أثناء حفظ البيانات في Google Sheets' 
+        },
+        { status: 400 }
       );
     }
+
   } catch (error: unknown) {
     const errorMessage = error instanceof Error ? error.message : 'تعذر الاتصال بالسيرفر';
-    
+
     return NextResponse.json(
       { success: false, error: errorMessage },
       { status: 500 }
