@@ -123,9 +123,9 @@ export default function EventRegistrationForm() {
               priority
             />
             <p className="text-amber-400 text-sm mt-3 font-semibold tracking-wider text-center">
-              سجل بيانات العملاء - SPIKELUBE
+              سجل بيانات - SPIKELUBE
               <span className="block text-xs font-normal opacity-80 mt-0.5">
-                Customer Registration Log - SPIKELUBE
+                Registration Log - SPIKELUBE
               </span>
             </p>
           </div>
@@ -317,7 +317,7 @@ export default function EventRegistrationForm() {
                     <button
                       type="submit"
                       disabled={isLoading}
-                      className="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70"
+                      className="w-full bg-blue-950 hover:bg-indigo-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70"
                     >
                       {isLoading ? (
                         <>
@@ -337,7 +337,7 @@ export default function EventRegistrationForm() {
             ) : (
               <div className="flex flex-col items-center justify-center py-6 text-center">
                 <div className="mb-6">
-                  <div className="w-20 h-20 bg-amber-500 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
                     <Check className="w-10 h-10 text-white stroke-[3]" />
                   </div>
                 </div>
@@ -349,7 +349,7 @@ export default function EventRegistrationForm() {
                   </span>
                 </h2>
                 <p className="text-slate-600 text-sm mb-6">
-                  تم إضافة بيانات العميل إلى سجل SPIKELUBE بنجاح
+                  تم إضافة بيانات SPIKELUBE بنجاح
                 </p>
 
                 <button
@@ -357,8 +357,7 @@ export default function EventRegistrationForm() {
                   onClick={handleReset}
                   className="text-slate-800 font-bold py-2 px-6 rounded-lg border border-slate-300 hover:bg-slate-100 transition-colors flex items-center gap-2"
                 >
-                  <Plus className="w-5 h-5" /> إضافة عميل جديد / Add New
-                  Customer
+                  <Plus className="w-5 h-5" /> ذاهب الي الرئيسية / Go to Home
                 </button>
               </div>
             )}
