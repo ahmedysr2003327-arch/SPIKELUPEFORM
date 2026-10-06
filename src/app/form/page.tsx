@@ -139,12 +139,6 @@ export default function EventRegistrationForm() {
                   </h2>
                 </div>
 
-                {errorMessage && (
-                  <div className="mb-4 p-3 bg-red-100 text-red-700 text-sm rounded-xl text-center font-semibold">
-                    {errorMessage}
-                  </div>
-                )}
-
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {/* اسم العميل */}
                   <div className="relative z-10">
@@ -311,13 +305,17 @@ export default function EventRegistrationForm() {
                       />
                     </div>
                   </div>
-
+                  {errorMessage && (
+                    <div className="mb-4 p-3 bg-red-100 text-red-700 text-sm rounded-xl text-center font-semibold">
+                      {errorMessage}
+                    </div>
+                  )}
                   {/* زر الإرسال */}
                   <div className="pt-4 relative z-10">
                     <button
                       type="submit"
                       disabled={isLoading}
-                      className="w-full bg-blue-950 hover:bg-indigo-800 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70"
+                      className="w-full bg-blue-950 hover:bg-blue-900 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70"
                     >
                       {isLoading ? (
                         <>
