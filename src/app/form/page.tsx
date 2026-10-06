@@ -143,8 +143,7 @@ export default function EventRegistrationForm() {
                   {/* اسم العميل */}
                   <div className="relative z-10">
                     <label className="block text-sm font-semibold text-slate-700 mb-1 mr-1">
-                      اسم العميل / Full Name{" "}
-                      <span className="text-red-500">*</span>
+                      الاسم / Full Name <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-slate-400">
