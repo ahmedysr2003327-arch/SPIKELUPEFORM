@@ -17,14 +17,16 @@ export async function POST(request: Request) {
       );
     }
 
-    // 2. تجهيز البيانات المطلوبة
+    // 2. تجهيز البيانات المطلوبة (تمت إضافة businessType و notes هنا)
     const payload = {
       fullName: body.fullName || '',
       phone: body.phone || '',
       whatsapp: body.whatsapp || '',
+      businessType: body.businessType || '', // <-- حقل طبيعة العمل
       email: body.email || '',
       company: body.company || '',
       address: body.address || '',
+      notes: body.notes || '',               // <-- حقل الملاحظات
     };
 
     // 3. إرسال الطلب إلى Google Apps Script
