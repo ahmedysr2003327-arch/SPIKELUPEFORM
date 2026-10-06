@@ -101,7 +101,12 @@ export default function EventRegistrationForm() {
 
   return (
     <div
-      className="relative min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 font-cairo bg-slate-900"
+      className="relative min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 font-cairo background-color: #fafbfc;
+    background-image:
+      radial-gradient(at 10% 10%, rgba(252, 203, 5, 0.18) 0px, transparent 45%),
+      radial-gradient(at 90% 15%, rgba(26, 43, 86, 0.12) 0px, transparent 50%),
+      radial-gradient(at 85% 85%, rgba(252, 203, 5, 0.12) 0px, transparent 45%),
+      radial-gradient(at 15% 90%, rgba(26, 43, 86, 0.08) 0px, transparent 50%);"
       dir="rtl"
     >
       <div className="relative w-full max-w-lg z-10">
@@ -117,7 +122,7 @@ export default function EventRegistrationForm() {
               className="object-contain rounded-lg"
               priority
             />
-            <p className="text-amber-600 text-sm mt-3 font-semibold tracking-wider text-center">
+            <p className="text-amber-400 text-sm mt-3 font-semibold tracking-wider text-center">
               سجل بيانات العملاء - SPIKELUBE
               <span className="block text-xs font-normal opacity-80 mt-0.5">
                 Customer Registration Log - SPIKELUBE
@@ -132,7 +137,7 @@ export default function EventRegistrationForm() {
                   <h2 className="text-2xl font-bold text-slate-800">
                     تسجيل بيانات العميل / Customer Registration
                   </h2>
-                  <p className="text-slate-500 mt-2 text-sm">
+                  <p className="text-orange-600 mt-2 text-sm">
                     يرجى تعبئة كافة الحقول لإضافتها فوراً إلى الشيت <br />
                     <span className="text-xs">
                       Please fill in all fields to submit to the sheet

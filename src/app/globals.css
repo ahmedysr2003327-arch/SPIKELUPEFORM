@@ -10,7 +10,13 @@
 
   body {
     color: var(--foreground);
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    /* خلفية بيضاء مائلة للنقاء مع تداخل ناعم للكحلي والأصفر */
+    background-color: #fafbfc;
+    background-image:
+      radial-gradient(at 10% 10%, rgba(252, 203, 5, 0.18) 0px, transparent 45%),
+      radial-gradient(at 90% 15%, rgba(26, 43, 86, 0.12) 0px, transparent 50%),
+      radial-gradient(at 85% 85%, rgba(252, 203, 5, 0.12) 0px, transparent 45%),
+      radial-gradient(at 15% 90%, rgba(26, 43, 86, 0.08) 0px, transparent 50%);
     min-height: 100vh;
     overflow-x: hidden;
     font-family: Arial, Helvetica, sans-serif;
@@ -19,16 +25,16 @@
 
 /* الطبقة الزجاجية الأساسية */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 /* حقول الإدخال الزجاجية */
 .glass-input {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.9);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
   transition: all 0.3s ease;
@@ -41,39 +47,39 @@
   outline: none;
 }
 
-/* الأشكال المضيئة في الخلفية */
+/* الأشكال المضيئة في الخلفية (تم ضبط الشفافية لتكون هادئة) */
 .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.6;
+  filter: blur(90px);
+  opacity: 0.35;
   z-index: -1;
 }
 
 .blob-1 {
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 450px;
   background: #1a2b56;
+  /* كحلي */
   top: -100px;
   right: -100px;
 }
 
 .blob-2 {
-  width: 350px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
   background: #fccb05;
+  /* أصفر */
   bottom: -50px;
   left: -50px;
-  animation-delay: -5s;
 }
 
 .blob-3 {
-  width: 300px;
-  height: 300px;
-  background: #cbd5e1;
+  width: 350px;
+  height: 350px;
+  background: #e2e8f0;
   top: 40%;
   left: 30%;
-  animation-duration: 15s;
 }
 
 @layer utilities {
