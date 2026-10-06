@@ -137,7 +137,7 @@ export default function EventRegistrationForm() {
                   <h2 className="text-2xl font-bold text-slate-800">
                     تسجيل بيانات العميل / Customer Registration
                   </h2>
-                  <p className="text-orange-600 mt-2 text-sm">
+                  <p className="text-amber-400 mt-2 text-sm">
                     يرجى تعبئة كافة الحقول لإضافتها فوراً إلى الشيت <br />
                     <span className="text-xs">
                       Please fill in all fields to submit to the sheet
