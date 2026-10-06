@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import Image from "next/image";
-import BusinessTypeSelect from "../component/BusinessTypeSelect";
+import BusinessTypeSelect from "@/app/component/BusinessTypeSelect";
 import {
   User,
   Smartphone,
