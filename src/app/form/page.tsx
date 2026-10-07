@@ -12,7 +12,6 @@ import {
   MapPin,
   ArrowLeft,
   Check,
-  Plus,
   Loader2,
   FileText,
 } from "lucide-react";
@@ -84,20 +83,20 @@ export default function EventRegistrationForm() {
     }
   };
 
-  const handleReset = () => {
-    setFormData({
-      fullName: "",
-      phone: "",
-      whatsapp: "",
-      email: "",
-      company: "",
-      address: "",
-      businessType: "",
-      notes: "",
-    });
-    setErrorMessage("");
-    setIsSubmitted(false);
-  };
+  // const handleReset = () => {
+  //   setFormData({
+  //     fullName: "",
+  //     phone: "",
+  //     whatsapp: "",
+  //     email: "",
+  //     company: "",
+  //     address: "",
+  //     businessType: "",
+  //     notes: "",
+  //   });
+  //   setErrorMessage("");
+  //   setIsSubmitted(false);
+  // };
 
   return (
     <div
@@ -340,22 +339,19 @@ export default function EventRegistrationForm() {
                 </div>
 
                 <h2 className="text-2xl font-extrabold text-slate-800 mb-2">
-                  تم الحفظ بنجاح!
-                  <span className="block text-lg font-normal text-slate-600 mt-1">
-                    Saved Successfully!
+                  شكرا لزيارتك! / Thank you for your visit!
+                  <span className="block text-lg font-normal text-amber-300 mt-1">
+                    نحن نقدر وقتك واهتمامك.
                   </span>
                 </h2>
-                <p className="text-slate-600 text-sm mb-6">
-                  تم إضافة بيانات SPIKELUBE بنجاح
-                </p>
 
-                <button
+                {/* <button
                   type="button"
                   onClick={handleReset}
                   className="text-slate-800 font-bold py-2 px-6 rounded-lg border border-slate-300 hover:bg-slate-100 transition-colors flex items-center gap-2"
                 >
                   <Plus className="w-5 h-5" /> ذاهب الي الرئيسية / Go to Home
-                </button>
+                </button> */}
               </div>
             )}
           </div>
