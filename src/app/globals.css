@@ -87,3 +87,11 @@
     text-wrap: balance;
   }
 }
+
+@media print {
+
+  header,
+  nav {
+    display: none !important;
+  }
+}
