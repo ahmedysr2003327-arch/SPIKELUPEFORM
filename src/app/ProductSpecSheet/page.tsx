@@ -251,7 +251,7 @@ export default function ProductSpecSheet() {
 
         {/* 4. الفوتر الأصفر الثابت في أسفل صفحات الطباعة وفي الشاشة */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-11 bg-yellow-400 flex items-center justify-center print:fixed print:bottom-0 print:left-0 print:right-0"
+          className="absolute bottom-0 left-0 right-0 h-11 bg-yellow-400 flex items-center justify-center print:fixed print:bottom-8 print:left-0 print:right-0"
           style={{
             backgroundColor: "#facc15",
             WebkitPrintColorAdjust: "exact",
