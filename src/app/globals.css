@@ -95,3 +95,32 @@
     display: none !important;
   }
 }
+
+
+
+@media print {
+
+  /* إخفاء التاريخ والوقت وعنوان الصفحة من المتصفح */
+  @page {
+    margin: 0;
+    size: auto;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* إخفاء أي Header أو Nav موجود في الـ layout الخارجي */
+  header,
+  nav,
+  .layout-header {
+    display: none !important;
+  }
+
+  /* ضبط محتوى الورقة لضمان ظهور الفوتر الأصفر بشكل ممتاز */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
